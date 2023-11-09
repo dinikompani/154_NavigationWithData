@@ -32,7 +32,7 @@ import com.example.esjumbo.R
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class)
 @Composable
-fun PageOne(
+fun HalamanSatu(
     pilihanRasa: List<String>,
     onSelectionChanged: (String) ->Unit,
     onConfirmButtonClicked: (Int) -> Unit,

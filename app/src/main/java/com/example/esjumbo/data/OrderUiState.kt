@@ -1,11 +1,9 @@
 package com.example.esjumbo.data
 
-import androidx.navigation.NavBackStackEntry
-
 data class OrderUiState(
 
-    val jumlah: NavBackStackEntry = 0,
-    val rasa: NavBackStackEntry = "",
+    val jumlah: Int = 0,
+    val rasa: String = "",
     val harga: String = "",
 )
 

@@ -1,7 +1,6 @@
 package com.example.esjumbo.ui.theme
 
 import androidx.lifecycle.ViewModel
-import androidx.navigation.NavBackStackEntry
 import com.example.esjumbo.data.OrderUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -15,14 +14,14 @@ class OrderViewModel : ViewModel() {
     private val _stateUI = MutableStateFlow(OrderUiState())
     val stateUI: StateFlow<OrderUiState> = _stateUI.asStateFlow()
 
-    fun setJumlah(jmlEsJumbo: NavBackStackEntry){
+    fun setJumlah(jmlEsJumbo: Int){
         _stateUI.update{stateSaatIni ->
             stateSaatIni.copy(
                 jumlah = jmlEsJumbo,
                 harga = hitungHarga(jumlah = jmlEsJumbo))}
     }
 
-    fun setRasa(rasaPilihan: NavBackStackEntry) {
+    fun setRasa(rasaPilihan: String) {
         _stateUI.update { stateSaatIni ->
             stateSaatIni.copy(rasa = rasaPilihan)
         }
@@ -33,7 +32,7 @@ class OrderViewModel : ViewModel() {
     }
 
     private fun hitungHarga(
-        jumlah: NavBackStackEntry = _stateUI.value.jumlah,
+        jumlah: Int = _stateUI.value.jumlah,
     ): String {
         val kalkulasiHarga = jumlah * HARGA_PER_CUP
 

@@ -63,9 +63,9 @@ fun EsJumboApp(
 ) {
     Scaffold(
         topBar = {
-            EsJumboApp(
+            EsJumboAppBar(
                 bisaNavigasiBack = false,
-                navigasiUp = {      }
+                navigasiUp = {}
             )
         }
 
